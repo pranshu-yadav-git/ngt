@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroGreenTech | Environmental Impact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-bg: #0a0a0f;
+            --darker-bg: #050508;
+            --light-text: #ffffff;
+            --light-gray: #aaaaaa;
+            --highlight: #4ade80;
+            --highlight-dark: #22c55e;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --radius: 8px;
+            --section-spacing: 8rem;
+            --navbar-height: 80px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            line-height: 1.7;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+            padding-top: var(--navbar-height);
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Inter Tight', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: var(--section-spacing) 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            outline: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Inter Tight', sans-serif;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            background-color: transparent;
+            border: 2px solid var(--highlight);
+            color: var(--highlight);
+        }
+
+        .btn:hover {
+            background-color: var(--highlight);
+            color: var(--dark-bg);
+            transform: translateY(-3px);
+            box-shadow: 0 0 15px rgba(74, 222, 128, 0.3);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--highlight);
+            color: var(--highlight);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--highlight);
+            color: var(--dark-bg);
+        }
+
+        /* Modern Navbar */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 0;
+            background: rgba(10, 10, 15, 0.85);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(74, 222, 128, 0.1);
+            height: var(--navbar-height);
+            display: flex;
+            justify-content: center;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            max-width: 1200px;
+            padding: 0 2rem;
+            transition: var(--transition);
+        }
+
+        /* Split navbar container */
+        .split-nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            gap: 2rem;
+            transition: var(--transition);
+        }
+
+        /* Logo container for split effect */
+        .logo-container {
+            flex: 0 0 auto;
+            padding: 0.8rem 1.5rem;
+            border-radius: var(--radius);
+            background: rgba(10, 10, 15, 0.85);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+            border: 1px solid rgba(74, 222, 128, 0.1);
+        }
+
+        /* Navigation container for split effect */
+        .nav-container {
+            flex: 0 0 auto;
+            padding: 0.8rem 1.5rem;
+            border-radius: var(--radius);
+            background: rgba(10, 10, 15, 0.85);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+            border: 1px solid rgba(74, 222, 128, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--light-text);
+            text-decoration: none;
+            font-family: 'Inter Tight', sans-serif;
+            transition: var(--transition);
+        }
+
+        .logo span {
+            color: var(--highlight);
+            transition: var(--transition);
+        }
+
+        .logo:hover span {
+            color: var(--light-text);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--light-gray);
+            font-weight: 600;
+            position: relative;
+            transition: var(--transition);
+            font-size: 1.1rem;
+            padding: 0.5rem 0;
+            display: block;
+        }
+
+        .nav-links a:hover, 
+        .nav-links a.active {
+            color: var(--light-text);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--highlight);
+            transition: var(--transition);
+            border-radius: 2px;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--light-text);
+            cursor: pointer;
+            z-index: 1100;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 4rem;
+            padding-bottom: 6rem;
+            position: relative;
+            overflow: hidden;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            background: radial-gradient(ellipse at top, rgba(74, 222, 128, 0.05) 0%, transparent 70%);
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .hero-text {
+            flex: 1;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--light-text);
+            line-height: 1.1;
+            background: linear-gradient(to right, #ffffff, var(--highlight));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero h1 span {
+            color: var(--highlight);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--light-gray);
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .hero-tagline {
+            display: inline-block;
+            color: var(--highlight);
+            font-weight: 800;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 2px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            border: 1px solid rgba(74, 222, 128, 0.1);
+            min-width: 180px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--highlight);
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--highlight);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            color: var(--light-gray);
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+
+        /* Section Header */
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-header h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+            color: var(--light-text);
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--highlight);
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--light-gray);
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            transition: var(--transition);
+            border: 1px solid rgba(74, 222, 128, 0.1);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--highlight);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            color: var(--dark-bg);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: var(--highlight);
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .card:hover::before {
+            width: 100%;
+        }
+
+        .card:hover,
+        .card:hover * {
+            color: var(--dark-bg) !important;
+        }
+
+        .card:hover .progress-label,
+        .card:hover .progress-label span {
+            color: var(--dark-bg) !important;
+        }
+
+        .card:hover .card-ul {
+            color: var(--dark-bg);
+        }
+
+        .card i {
+            font-size: 3rem;
+            color: var(--highlight);
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            transition: var(--transition);
+            color: var(--light-text);
+        }
+
+        .card p {
+            color: var(--light-gray);
+            transition: var(--transition);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        /* Neuromorphic Section */
+        .neuromorphic {
+            position: relative;
+            background: var(--darker-bg);
+        }
+
+        .neuromorphic-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .neuromorphic-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .neuromorphic-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: var(--light-gray);
+        }
+
+        /* Benefits Section */
+        .benefits {
+            position: relative;
+            overflow: hidden;
+            background: var(--darker-bg);
+        }
+
+        /* Mission Section */
+        .mission {
+            background: rgba(74, 222, 128, 0.05);
+            color: var(--light-text);
+            text-align: center;
+            padding: 6rem 0;
+            position: relative;
+            overflow: hidden;
+            border-top: 1px solid rgba(74, 222, 128, 0.1);
+            border-bottom: 1px solid rgba(74, 222, 128, 0.1);
+        }
+
+        .mission-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .mission-tagline {
+            font-size: 2.5rem;
+            font-family: 'Inter', sans-serif;
+            margin-bottom: 2rem;
+            font-weight: 700;
+            /* letter-spacing: 2px; */
+            color: var(--highlight);
+        }
+
+        .mission-text {
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
+            font-weight: 300;
+            color: var(--light-gray);
+        }
+
+        /* Impact Visualization */
+        .impact-visual {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: var(--radius);
+            border: 1px solid rgba(74, 222, 128, 0.1);
+            margin: 4rem 0;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            overflow: hidden;
+            padding: 0 2rem;
+        }
+
+        .impact-bars {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            width: 100%;
+            height: 90%;
+            gap: 1rem;
+        }
+
+        .bar-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+            width: 20%;
+        }
+
+        .bar-label {
+            color: var(--light-gray);
+            margin-top: 10px;
+            font-size: 0.9rem;
+            text-align: center;
+            height: 10%;
+        }
+
+        .bar {
+            width: 80%;
+            border-radius: 4px 4px 0 0;
+            transition: all 1.5s ease-out;
+            position: relative;
+        }
+
+        .bar::after {
+            content: attr(data-value);
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--light-text);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .traditional-bar {
+            background: rgba(170, 170, 170, 0.5);
+        }
+
+        .neuro-bar {
+            background: var(--highlight);
+        }
+
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--light-gray);
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 10px;
+            border-radius: 2px;
+        }
+
+        .legend-traditional {
+            background: rgba(170, 170, 170, 0.5);
+        }
+
+        .legend-neuro {
+            background: var(--highlight);
+        }
+
+        /* Impact Grid */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .impact-item {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: var(--radius);
+            padding: 2rem;
+            border: 1px solid rgba(74, 222, 128, 0.1);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .impact-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--highlight);
+        }
+
+        .impact-item i {
+            font-size: 2.5rem;
+            color: var(--highlight);
+            margin-bottom: 1rem;
+        }
+
+        .impact-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 3rem 0;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid rgba(74, 222, 128, 0.1);
+        }
+
+        .comparison-table th, 
+        .comparison-table td {
+            padding: 1.2rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .comparison-table th {
+            background: rgba(74, 222, 128, 0.1);
+            color: var(--highlight);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tr:hover {
+            background: rgba(74, 222, 128, 0.05);
+        }
+
+        .comparison-table .highlight {
+            color: var(--highlight);
+            font-weight: 600;
+        }
+
+        /* Lifecycle Section */
+        .lifecycle {
+            background: rgba(74, 222, 128, 0.05);
+            padding: 5rem 0;
+            border-radius: var(--radius);
+            margin: 5rem 0;
+            border: 1px solid rgba(74, 222, 128, 0.1);
+        }
+
+        .lifecycle-steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .lifecycle-step {
+            flex: 1;
+            min-width: 250px;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: var(--radius);
+            border: 1px solid rgba(74, 222, 128, 0.1);
+        }
+
+        .lifecycle-step h3 {
+            color: var(--highlight);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        /* Progress Bars */
+        .progress-container {
+            margin: 1.5rem 0;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            color: var(--light-gray);
+            font-size: 0.9rem;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--highlight);
+            border-radius: 4px;
+            transition: width 1.5s ease-out;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--darker-bg);
+            color: var(--light-gray);
+            padding: 5rem 0 2rem;
+            position: relative;
+            border-top: 1px solid rgba(74, 222, 128, 0.1);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-column h3 {
+            color: var(--light-text);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--highlight);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--light-gray);
+            text-decoration: none;
+            transition: var(--transition);
+            display: block;
+        }
+
+        .footer-links a:hover {
+            color: var(--highlight);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--light-gray);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--highlight);
+            color: var(--dark-bg);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--light-gray);
+        }
+
+        /* Animation */
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.7; }
+        }
+
+        @keyframes growHeight {
+            from { height: 0; }
+            to { height: var(--target-height); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-btns, .hero-stats {
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .impact-visual {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: var(--darker-bg);
+                flex-direction: column;
+                padding: 6rem 2rem 2rem;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+                gap: 1.5rem;
+                z-index: 1000;
+                justify-content: center;
+                align-items: center;
+                transform: translateX(100%);
+                transition: transform 0.4s ease-in-out;
+            }
+            
+            .nav-links.active {
+                display: flex;
+                transform: translateX(0);
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+            
+            .mission-tagline {
+                font-size: 2rem;
+            }
+            
+            .hero-stats {
+                justify-content: center;
+            }
+            
+            /* Hide split effect on mobile */
+            .logo-container, .nav-container {
+                background: transparent !important;
+                backdrop-filter: none !important;
+                box-shadow: none !important;
+                border: none !important;
+                padding: 0 !important;
+            }
+            
+            .split-nav-container {
+                gap: 0;
+            }
+            
+            .bar-group {
+                width: 22%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+            
+            section {
+                padding: 4rem 0;
+            }
+            
+            .hero {
+                padding-top: 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+            
+            .mission-tagline {
+                font-size: 1.8rem;
+            }
+            
+            .mission-text {
+                font-size: 1.2rem;
+            }
+            
+            .bar-group {
+                width: 18%;
+            }
+            
+            .bar::after {
+                font-size: 0.8rem;
+                top: -25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Modern Navbar -->
+    <header>
+        <div class="header-container">
+            <div class="split-nav-container">
+                <div class="logo-container">
+                    <a href="index.html" class="logo">
+                        <i class="fas fa-brain"></i> Neuro<span>Green</span>Tech
+                    </a>
+                </div>
+                <div class="nav-container">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="solutions.html">Solutions</a></li>
+                        <li><a href="impact.html" class="active">Impact</a></li>
+                    </ul>
+                    <button class="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Enhanced Impact Page Content -->
+    <section class="hero" style="min-height: 60vh; padding-top: 6rem;">
+        <div class="container">
+            <div class="section-header animate">
+                <h1>Environmental Impact</h1>
+                <p>Reducing e-waste through revolutionary neuromorphic computing</p>
+            </div>
+            
+            <div class="hero-stats">
+                <div class="stat-item animate">
+                    <h3>57M+</h3>
+                    <p>Tons of e-waste generated annually</p>
+                </div>
+                <div class="stat-item animate delay-1">
+                    <h3>3%</h3>
+                    <p>Global electricity consumed by data centers</p>
+                </div>
+                <div class="stat-item animate delay-2">
+                    <h3>20%</h3>
+                    <p>E-waste properly recycled</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="section-header animate">
+                <h2>The E-Waste Crisis</h2>
+                <p>Understanding the environmental challenge of traditional computing</p>
+            </div>
+            
+            <div class="cards-grid">
+                <div class="card animate">
+                    <i class="fas fa-trash"></i>
+                    <h3>Mounting E-Waste</h3>
+                    <p>Global e-waste reached 57 million tons in 2023, growing at 3-5% annually. Less than 20% is properly recycled, with the rest ending in landfills or being informally processed in developing countries.</p>
+                    <p><strong>Environmental Impact:</strong> Toxic materials like lead, mercury, and cadmium leach into soil and water, contaminating ecosystems and food chains. Valuable resources like gold, silver, and rare earth metals are lost.</p>
+                </div>
+                <div class="card animate delay-1">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Energy Inefficiency</h3>
+                    <p>Data centers consume 3% of global electricity, projected to reach 8% by 2030. Traditional processors waste 60-70% of energy as heat, requiring extensive cooling systems that further increase energy consumption.</p>
+                    <p><strong>Carbon Footprint:</strong> The ICT sector accounts for 2-3% of global CO2 emissions - equivalent to the aviation industry. This is projected to double by 2025 without intervention.</p>
+                </div>
+                <div class="card animate delay-2">
+                    <i class="fas fa-industry"></i>
+                    <h3>Resource-Intensive Manufacturing</h3>
+                    <p>Producing a single computer chip requires 32kg of water and 1.6kg of fossil fuels. Chip manufacturing accounts for 30% of electronics' total carbon footprint due to energy-intensive processes.</p>
+                    <p><strong>Resource Depletion:</strong> Mining for rare earth metals causes deforestation, water pollution, and habitat destruction. Many critical materials face supply chain vulnerabilities.</p>
+                </div>
+            </div>
+            
+            <div class="comparison-table animate">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Environmental Factor</th>
+                            <th>Traditional Computing</th>
+                            <th>Neuromorphic Computing</th>
+                            <th>Improvement</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Energy Consumption (per TFLOPS)</td>
+                            <td>250-300 kWh</td>
+                            <td class="highlight">15-25 kWh</td>
+                            <td class="highlight">90-95% reduction</td>
+                        </tr>
+                        <tr>
+                            <td>Chip Lifespan</td>
+                            <td>3-5 years</td>
+                            <td class="highlight">15+ years</td>
+                            <td class="highlight">300% increase</td>
+                        </tr>
+                        <tr>
+                            <td>Water Usage (per chip)</td>
+                            <td>32 kg</td>
+                            <td class="highlight">9.6 kg</td>
+                            <td class="highlight">70% reduction</td>
+                        </tr>
+                        <tr>
+                            <td>Carbon Footprint (over 5 years)</td>
+                            <td>1.2 tons CO2e</td>
+                            <td class="highlight">0.3 tons CO2e</td>
+                            <td class="highlight">75% reduction</td>
+                        </tr>
+                        <tr>
+                            <td>Recyclability</td>
+                            <td>15-20%</td>
+                            <td class="highlight">85-90%</td>
+                            <td class="highlight">5x improvement</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="neuromorphic">
+        <div class="container">
+            <div class="section-header animate">
+                <h2>Our Sustainability Transformation</h2>
+                <p>Measurable environmental benefits of neuromorphic technology</p>
+            </div>
+            
+            <div class="impact-visual animate">
+                <div class="impact-bars">
+                    <div class="bar-group">
+                        <div class="bar traditional-bar" data-value="100%" style="height: 100%;"></div>
+                        <div class="bar neuro-bar" data-value="40%" style="height: 40%;"></div>
+                        <div class="bar-label">E-Waste</div>
+                    </div>
+                    <div class="bar-group">
+                        <div class="bar traditional-bar" data-value="100%" style="height: 100%;"></div>
+                        <div class="bar neuro-bar" data-value="10%" style="height: 10%;"></div>
+                        <div class="bar-label">Energy</div>
+                    </div>
+                    <div class="bar-group">
+                        <div class="bar traditional-bar" data-value="100%" style="height: 100%;"></div>
+                        <div class="bar neuro-bar" data-value="30%" style="height: 30%;"></div>
+                        <div class="bar-label">Water</div>
+                    </div>
+                    <div class="bar-group">
+                        <div class="bar traditional-bar" data-value="100%" style="height: 100%;"></div>
+                        <div class="bar neuro-bar" data-value="25%" style="height: 25%;"></div>
+                        <div class="bar-label">Carbon</div>
+                    </div>
+                    <div class="bar-group">
+                        <div class="bar traditional-bar" data-value="20%" style="height: 20%;"></div>
+                        <div class="bar neuro-bar" data-value="85%" style="height: 85%;"></div>
+                        <div class="bar-label">Recyclability</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="legend animate">
+                <div class="legend-item">
+                    <div class="legend-color legend-traditional"></div>
+                    <span>Traditional Computing</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color legend-neuro"></div>
+                    <span>NeuroGreenTech</span>
+                </div>
+            </div>
+            
+            <div class="impact-grid">
+                <div class="impact-item animate">
+                    <i class="fas fa-recycle"></i>
+                    <h3>60%</h3>
+                    <p>Less E-Waste Generated</p>
+                </div>
+                <div class="impact-item animate delay-1">
+                    <i class="fas fa-bolt"></i>
+                    <h3>90%</h3>
+                    <p>Energy Reduction</p>
+                </div>
+                <div class="impact-item animate delay-2">
+                    <i class="fas fa-tint"></i>
+                    <h3>70%</h3>
+                    <p>Water Conservation</p>
+                </div>
+                <div class="impact-item animate delay-3">
+                    <i class="fas fa-leaf"></i>
+                    <h3>75%</h3>
+                    <p>Lower Carbon Footprint</p>
+                </div>
+            </div>
+            
+            <div class="cards-grid">
+                <div class="card animate">
+                    <i class="fas fa-recycle"></i>
+                    <h3>E-Waste Reduction Strategy</h3>
+                    <p>Our neuromorphic processors extend device lifespan from 3-5 years to 15+ years through adaptive learning capabilities that improve with use. The modular architecture allows components to be upgraded without replacing entire devices.</p>
+                    <p><strong>Case Study:</strong> A major smartphone manufacturer reduced e-waste by 58% after integrating NeuroChip technology, saving 15,000 devices from landfills monthly.</p>
+                </div>
+                <div class="card animate delay-1">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Carbon Neutral Computing</h3>
+                    <p>Neuromorphic chips reduce energy consumption by 90-99% for equivalent computational tasks through event-based processing that mimics the brain's efficiency. A data center using our technology can achieve 80% reduction in carbon emissions.</p>
+                    <p><strong>Case Study:</strong> A cloud provider reduced their carbon emissions by 15,000 tons annually after switching to NeuroCore processors - equivalent to planting 250,000 trees.</p>
+                </div>
+                <div class="card animate delay-2">
+                    <i class="fas fa-tint"></i>
+                    <h3>Water Stewardship</h3>
+                    <p>Our manufacturing process uses 70% less water than traditional chip fabrication through dry processing techniques. Reduced cooling requirements also conserve water in data center operations by 65%.</p>
+                    <p><strong>Case Study:</strong> A semiconductor fab saved 120 million liters of water annually after adopting our sustainable manufacturing techniques - enough to supply 1,000 households for a year.</p>
+                </div>
+            </div>
+            
+            <div class="lifecycle animate">
+                <div class="section-header">
+                    <h2>Lifecycle Analysis</h2>
+                    <p>How neuromorphic computing transforms the electronics lifecycle</p>
+                </div>
+                
+                <div class="lifecycle-steps">
+                    <div class="lifecycle-step">
+                        <h3><i class="fas fa-industry"></i> Manufacturing</h3>
+                        <p>70% reduction in water usage and 65% less energy consumption during production. Elimination of 15 toxic chemicals typically used in chip manufacturing.</p>
+                    </div>
+                    <div class="lifecycle-step">
+                        <h3><i class="fas fa-shipping-fast"></i> Distribution</h3>
+                        <p>40% lighter components reduce transportation emissions. Modular design decreases shipping volume by 30%.</p>
+                    </div>
+                    <div class="lifecycle-step">
+                        <h3><i class="fas fa-plug"></i> Operation</h3>
+                        <p>90-99% energy reduction during use. No active cooling required, eliminating associated energy costs. 15+ year operational lifespan.</p>
+                    </div>
+                    <div class="lifecycle-step">
+                        <h3><i class="fas fa-recycle"></i> End-of-Life</h3>
+                        <p>85% recyclability rate. Modular design enables component reuse. Biodegradable substrate materials in development.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="section-header animate">
+                <h2>Our Sustainability Roadmap</h2>
+                <p>Ambitious targets for a sustainable technological future</p>
+            </div>
+            
+            <div class="cards-grid">
+                <div class="card animate">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>2025 Targets</h3>
+                    <ul class="card-ul" style="margin-left: 1.5rem; margin-bottom: 1.5rem; color: var(--light-gray);">
+                        <li>Divert 1 million devices from landfills</li>
+                        <div class="progress-container">
+                            <div class="progress-label">
+                                <span>Current Progress</span>
+                                <span>78%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 78%;"></div>
+                            </div>
+                        </div>
+                        
+                        <li>Achieve carbon-neutral manufacturing</li>
+                        <div class="progress-container">
+                            <div class="progress-label">
+                                <span>Current Progress</span>
+                                <span>65%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 65%;"></div>
+                            </div>
+                        </div>
+                        
+                        <li>Recycle 95% of production materials</li>
+                        <div class="progress-container">
+                            <div class="progress-label">
+                                <span>Current Progress</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 88%;"></div>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+                <div class="card animate delay-1">
+                    <i class="fas fa-seedling"></i>
+                    <h3>2030 Vision</h3>
+                    <ul class="card-ul" style="margin-left: 1.5rem; margin-bottom: 1.5rem; color: var(--light-gray);">
+                        <li>Create fully biodegradable processors</li>
+                        <li>Eliminate rare earth metals from production</li>
+                        <li>Establish closed-loop recycling system</li>
+                        <li>Develop ocean plastic-based components</li>
+                        <li>Achieve net-positive environmental impact</li>
+                    </ul>
+                    <p><strong>Initiative:</strong> GreenChip R&D program has secured $25M in funding</p>
+                </div>
+                <div class="card animate delay-2">
+                    <i class="fas fa-globe-americas"></i>
+                    <h3>Global Partnerships</h3>
+                    <ul class="card-ul" style="margin-left: 1.5rem; margin-bottom: 1.5rem; color: var(--light-gray);">
+                        <li>UN Sustainable Technology Initiative</li>
+                        <li>Global E-Waste Reduction Coalition</li>
+                        <li>Open-source sustainable computing standards</li>
+                        <li>World Economic Forum Tech for Good</li>
+                        <li>Developing nations e-waste education</li>
+                    </ul>
+                    <p><strong>Impact:</strong> Working with 45 countries to implement neuromorphic solutions</p>
+                </div>
+            </div>
+            
+            <div class="section-header animate" style="margin-top: 6rem;">
+                <h2>Circular Economy Principles</h2>
+                <p>Transforming electronics from linear to circular systems</p>
+            </div>
+            
+            <div class="cards-grid">
+                <div class="card animate">
+                    <i class="fas fa-sync-alt"></i>
+                    <h3>Design for Longevity</h3>
+                    <p>Neuromorphic chips are engineered for 15+ year lifespans through adaptive neural networks that improve with use. Our modular architecture allows incremental upgrades without replacing entire systems.</p>
+                </div>
+                <div class="card animate delay-1">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Maintain & Repair</h3>
+                    <p>We provide open diagnostic tools and modular components to extend device life. Our certified repair network has grown to 250 locations worldwide, reducing replacement needs by 65%.</p>
+                </div>
+                <div class="card animate delay-2">
+                    <i class="fas fa-recycle"></i>
+                    <h3>Reuse & Recycle</h3>
+                    <p>Our take-back program recovers 92% of materials. Advanced disassembly robots separate components with 99% purity. We're developing enzymatic recycling to break down chips at molecular level.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mission">
+        <div class="container">
+            <div class="mission-content">
+                <div class="mission-tagline animate">Join the Sustainable Computing Revolution</div>
+                <div class="mission-text animate delay-1">Together, we can build a future where technology enhances our world without depleting its resources. NeuroGreenTech is committed to creating computing solutions that respect our planet's boundaries while pushing the boundaries of innovation.</div>
+                <a href="solutions.html" class="btn animate delay-2">Explore Our Solutions</a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <a href="index.html" class="logo" style="font-size: 1.8rem; margin-bottom: 1.5rem; display: block;">
+                        <i class="fas fa-brain"></i> Neuro<span style="color: var(--highlight)">Green</span>Tech
+                    </a>
+                    <p style="margin-bottom: 1.5rem; max-width: 300px;">Smarter solutions for a cleaner planet through neuromorphic computing innovation.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Solutions</h3>
+                    <ul class="footer-links">
+                        <li><a href="solutions.html">Neuromorphic Chips</a></li>
+                        <li><a href="solutions.html">Industrial Applications</a></li>
+                        <li><a href="solutions.html">Edge Computing</a></li>
+                        <li><a href="solutions.html">Custom Solutions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Impact</h3>
+                    <ul class="footer-links">
+                        <li><a href="impact.html">E-Waste Reduction</a></li>
+                        <li><a href="impact.html">Carbon Footprint</a></li>
+                        <li><a href="impact.html">Sustainability Reports</a></li>
+                        <li><a href="impact.html">Our Goals</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 NeuroGreenTech. Pioneering sustainable computing solutions. ISO 14001 Certified</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navMenu = document.querySelector('.nav-links');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                this.querySelector('i').classList.toggle('fa-bars');
+                this.querySelector('i').classList.toggle('fa-times');
+            });
+            
+            // Header scroll effect
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                const splitNavContainer = document.querySelector('.split-nav-container');
+                const logoContainer = document.querySelector('.logo-container');
+                const navContainer = document.querySelector('.nav-container');
+                
+                if (window.scrollY > 100) {
+                    // Apply split effect
+                    header.style.padding = '1.5rem 0';
+                    header.style.background = 'transparent';
+                    splitNavContainer.style.gap = '2rem';
+                    logoContainer.style.padding = '0.8rem 1.5rem';
+                    logoContainer.style.background = 'rgba(10, 10, 15, 0.85)';
+                    logoContainer.style.backdropFilter = 'blur(10px)';
+                    logoContainer.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.3)';
+                    logoContainer.style.border = '1px solid rgba(74, 222, 128, 0.1)';
+                    navContainer.style.padding = '0.8rem 1.5rem';
+                    navContainer.style.background = 'rgba(10, 10, 15, 0.85)';
+                    navContainer.style.backdropFilter = 'blur(10px)';
+                    navContainer.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.3)';
+                    navContainer.style.border = '1px solid rgba(74, 222, 128, 0.1)';
+                } else {
+                    // Return to original state
+                    header.style.padding = '1rem 0';
+                    header.style.background = 'rgba(10, 10, 15, 0.85)';
+                    splitNavContainer.style.gap = '0';
+                    logoContainer.style.padding = '0';
+                    logoContainer.style.background = 'transparent';
+                    logoContainer.style.backdropFilter = 'none';
+                    logoContainer.style.boxShadow = 'none';
+                    logoContainer.style.border = 'none';
+                    navContainer.style.padding = '0';
+                    navContainer.style.background = 'transparent';
+                    navContainer.style.backdropFilter = 'none';
+                    navContainer.style.boxShadow = 'none';
+                    navContainer.style.border = 'none';
+                }
+            });
+            
+            // Add scroll animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                        
+                        // Animate progress bars
+                        if (entry.target.classList.contains('progress-fill')) {
+                            const width = entry.target.style.width;
+                            entry.target.style.width = '0';
+                            setTimeout(() => {
+                                entry.target.style.width = width;
+                            }, 300);
+                        }
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('section .container > *').forEach(el => {
+                if (!el.classList.contains('animate')) {
+                    observer.observe(el);
+                }
+            });
+            
+            // Observe progress bars specifically
+            document.querySelectorAll('.progress-fill').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
